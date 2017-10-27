@@ -501,10 +501,10 @@
 
                     if(dir==='across'){
                         // clueHeader('ACROSS').appendTo(cluesDiv);
-                        html+= '<div class="cwd-clues-header">ACROSS</div>';
+                        html+= '<div class="cwd-clues-header">ACROSS <i class="material-icons">arrow_forward</i></div>';
 
                     }else if(dir==='down'){
-                         html+= '<div class="cwd-clues-header">DOWN</div>';
+                         html+= '<div class="cwd-clues-header">DOWN <i class="material-icons">arrow_downward</i></div>';
                     }
                     $.each(clueArray, function (index, clue) {
                         html+= impl.stringFormat(

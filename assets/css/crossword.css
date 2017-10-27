@@ -1,23 +1,62 @@
+@font-face {
+    font-family: 'simple-line-icons';
+    src: url('../fonts/simple-line-icons.ttf?az2gmn') format('truetype'), url('../fonts/simple-line-icons.woff?az2gmn') format('woff'), url('../fonts/simple-line-icons.svg?az2gmn#simple-line-icons') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+.icon-control-play, .icon-control-pause, .icon-printer, .icon-question, .icon-settings, .icon-calender, .icon-info {
+    font-family: 'simple-line-icons';
+    speak: none;
+    font-style: normal !important;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+.icon-control-play:before {
+    content: "\e071";
+}
+.icon-control-pause:before {
+    content: "\e072";
+}
+.icon-printer:before {
+    content: "\e02e";
+}
+.icon-question:before {
+    content: "\e05d";
+}
+.icon-settings:before {
+    content: "\e09a";
+}
+.icon-calender:before {
+    content: "\e075";
+}
+.icon-info:before {
+    content: "\e08b";
+}
+
+
 #cwd-container {
     font-family: tahoma;
 }
-
 #cwd-grid {
     border: solid 1px black;
 }
-
 #cwd-grid td.cwd-tile-highlight
 {
     background-color: Yellow !important;
 }
-
 #cwd-grid td.cwd-tile-cursor
 {
     border-color: White !important;
     background-color: darkgray !important;
     color: white;
 }
-
 #cwd-grid td.cwd-tile-correct
 {
     background-color: Lime !important;
@@ -72,4 +111,127 @@
 
 .cwd-clue-text {
     cursor: pointer;
+}
+header nav.navbar.navtop, header nav.navbar.navbottom {
+    border: none;
+    background: none;
+    margin-bottom: 0px;
+}
+header nav.navbar.navtop {
+    background: #f5f5f5;
+}
+header nav.navbar.navbottom {
+    border-bottom: 1px solid #f5f5f5;
+    margin-bottom: 20px;
+}
+header nav.navbar.navtop .navbar-header {
+    float: none;
+}
+header nav.navbar.navtop .date li {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    color: #282828;
+    font-weight: 400;
+    padding: 15px 0px;
+}
+header nav.navbar.navbottom .navbar-header .navbar-brand {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    color: #000;
+    font-weight: 500;
+    height: inherit;
+}
+header nav.navbar.navbottom .navbar-header .navbar-brand span {
+    display: block;
+    font-size: 13px;
+    font-weight: 400;
+    color: rgba(0,0,0,0.6);
+}
+header nav.navbar.navbottom .score {
+     font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    color: #282828;
+    font-weight: 400;
+    padding: 15px 15px;
+}
+header nav.navbar.navbottom .score span {
+    display: inline-block;
+    margin-left: 5px;
+}
+header nav.navbar.navbottom .timerr {
+    padding: 12px 15px;
+}
+header nav.navbar.navbottom .timerr button.btn {
+    border: none;
+    padding: 0px;
+    width: 24px;
+    height: 24px;
+    background: #1e96bb;
+    border-radius: 50px 50px 50px 50px;
+-moz-border-radius: 50px 50px 50px 50px;
+-webkit-border-radius: 50px 50px 50px 50px;
+    outline: none;
+}
+header nav.navbar.navbottom .timerr button.btn i {
+    width: 24px;
+    height: 24px;
+    display: block;
+    text-align: center;
+    line-height: 24px;
+    font-size: 12px;
+    color: #fff;
+}
+header nav.navbar.navbottom .timerr .timer {
+    width: 70px;
+    border: none;
+    padding: 3px 5px;
+    background: none;
+}
+header nav.navbar.navtop .navbar-header .navbar-brand {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    color: #282828;
+    font-weight: 400;
+}
+header nav.navbar.navbottom ul.settings li.dropdown a.dropdown-toggle {
+    font-size: 20px;
+    color: #282828;
+    padding: 0px 15px;
+    height: 50px;
+    position: relative;
+}
+header nav.navbar.navbottom ul.settings li.dropdown.open a.dropdown-toggle {
+    color: #1e96bb;
+}
+header nav.navbar.navbottom ul.settings li + li a.dropdown-toggle:before {
+    width: 1px;
+    height: 20px;
+    left: 0px;
+    top: 50%;
+    margin-top: -10px;
+    content: "";
+    position: absolute;
+    background: #cccccc;
+    z-index: -1;
+}
+header nav.navbar.navbottom ul.settings li.dropdown a.dropdown-toggle i {
+    height: 50px;
+    display: block;
+    line-height: 50px;
+}
+header nav.navbar.navbottom ul.nav {
+    padding-top: 10px; 
+    padding-bottom: 10px;
+}
+header nav.navbar.navbottom .navbar-nav > .open > a, 
+header nav.navbar.navbottom .navbar-nav > .open > a:hover, 
+header nav.navbar.navbottom .navbar-nav > .open > a:focus {
+    background: none;
+}
+header nav.navbar.navbottom ul.nav.settings {}
+@media (min-width: 768px) {
+.navbar.navbottom .navbar-collapse {
+    padding-left: 0px;
+    padding-right: 0px;
+}
 }

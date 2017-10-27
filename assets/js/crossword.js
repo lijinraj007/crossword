@@ -28,10 +28,13 @@
                     return false;
                 }
                 data.css('visibility', 'hidden');
+
                 options = $.extend(defaultOptions, options);
+
                 impl.appendGrid(options);
                 impl.appendClues(data, options.cluesToRight);
                 impl.bindEvents();
+
                 data.hide();
                 data.css('visibility', 'visible');
                 data.fadeIn('slow');
@@ -43,6 +46,7 @@
                 var gridWidth = options.gridMask[0].length;
                 var gridHeight = options.gridMask.length;
                 var gridSize = { width: gridWidth ? gridWidth : 0, height: gridHeight ? gridHeight : 0 };
+
                 options.acrossClues = options.acrossClues ? options.acrossClues : [];
                 options.downClues = options.downClues ? options.downClues : [];
                 var borderStyle = impl.stringFormat('solid 1px {0}', options.colour);
@@ -160,15 +164,13 @@
 
                 // Add the grid into the DOM.
                 
-                 
                 var container = $('<div />').attr('id', 'cwd-container').appendTo(data);
                 
-
                 $('<div id="cwd-divGrid" />')
                     .append(grid)
                     .append(clueBox)
                     .appendTo(container)
-                                        .css({ display: "inline-block", width: grid.width() });
+                    .css({ display: "inline-block", width: grid.width() });
 
                     // Align tile letters vertically.
                     $('.cwd-tile-letter').each(function() {
@@ -485,7 +487,7 @@
 
 
                 var displayStyle = onRight ? "inline-block" : "block";
-                var cluesDiv = $(impl.stringFormat('<div id="cwd-clues" style="vertical-align: top; display: {0}" />', displayStyle));
+                var cluesDiv = $(impl.stringFormat('<div id="cwd-clues" class="row" />', displayStyle));
                 var missingClue = '<span style="color: red;">Missing clue</span>';
 
                 var clueHeader = function(label) {
@@ -495,7 +497,7 @@
                 };
 
                 var addClues = function(clueArray,dir) {
-                    var html=impl.stringFormat('<div class="{0}-clue">',dir);
+                    var html=impl.stringFormat('<div class="{0}-clue col-sm-6">',dir);
 
                     if(dir==='across'){
                         // clueHeader('ACROSS').appendTo(cluesDiv);
@@ -541,8 +543,8 @@
 
 
                 var width = onRight ? '' : $('#cwd-divGrid').width();
-                cluesDiv.outerWidth(width).appendTo($('#cwd-container'));
-               // impl.columniseClues(onRight);
+                cluesDiv.appendTo($('#cwd-container')); 
+                //impl.columniseClues(onRight);
             },
 
             showClue: function (clueId) {
@@ -634,7 +636,7 @@
                 var columnWidth = (cluesDiv.width() / 2) - 5;
 
                 var getNewColumn = function (number) {
-                    return $(impl.stringFormat('<div id="cwd-col{0}" style="position: relative; display: inline-table; vertical-align: top; width: {1};" />', number, columnWidth));
+                    return $(impl.stringFormat('<div id="cwd-col{0}" class="row" style="position: relative; display: inline-table; vertical-align: top; width: {1};" />', number, columnWidth));
                 }
 
                 var colDivs = [];
@@ -676,7 +678,7 @@
                         $(this).css('margin-left', '5px');
                     }
                     if ($(this).attr('id') !== 'col' + (col - 1)) {
-                        $(this).css('margin-right', '5px');
+                        //$(this).css('margin-right', '5px');
                     }
                 });
             },
